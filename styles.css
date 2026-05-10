@@ -1,0 +1,949 @@
+/* =====================================================
+   1. ROOT VARIABLES (Design Tokens)
+===================================================== */
+
+:root {
+  --color-bg: #181818;
+  --color-accent: #FFC300;
+  --color-text: #ffffff;
+
+  --font-teko: 'Teko', sans-serif;
+  --font-norwester: 'Norwester', sans-serif;
+}
+
+/* * {
+  outline: 1px solid red; ----- DEBUG -----
+} */
+
+
+/* =====================================================
+   2. BASE / GLOBAL STYLES
+===================================================== */
+
+html {
+  background-color: var(--color-bg);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+
+#bg-text,
+#fg-text {
+  margin: 0;
+  line-height: 1;
+}
+
+/* =====================================================
+   3. TYPOGRAPHY
+   Using your existing selectors only
+===================================================== */
+
+/* Navbar links */
+.navbar .menu a {
+  font-family: var(--font-teko);
+  font-size: 2rem;
+  text-transform: uppercase;
+  /* letter-spacing: 0.05em;  */
+}
+
+/* Foreground hero text */
+#fg-text {
+  color: var(--color-text);
+  font-family: var(--font-teko);
+  font-weight: 550;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  /* letter-spacing: 0.05em; */
+  line-height: 1;
+  display: inline-block;
+  margin: 0;
+}
+
+/* Background watermark text */
+#bg-text {
+  color: transparent;
+  -webkit-text-stroke: 2px #FFC300;
+  font-size: clamp(6rem, 18vw, 18rem);
+  font-family: var(--font-norwester);
+  opacity: 0.1;
+  text-transform: uppercase;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.about-h1 {
+  color: var(--color-text);
+  font-family: var(--font-norwester);
+  font-weight: 500;
+  font-size: clamp(1rem, 3vw, 2.5rem);
+  /* letter-spacing: 0.05em; */
+  line-height: 1;
+  display: inline-block;
+  margin: 0;
+}
+
+.intro {
+  color: var(--color-text);
+  font-family: var(--font-teko);
+  font-size: clamp(1rem, 3vw, 1.85rem);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* =====================================================
+   HERO SECTION AND IMAGE
+===================================================== */
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 4rem;
+  padding: 2rem 4rem;
+
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 650px;
+}
+
+/* Right side */
+.hero-media {
+  flex: 1;
+  min-width: 350px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Image */
+.hero-image {
+  width: 100%;
+  max-width: 350px;
+
+  border-radius: 12px;
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.workflow {
+  color: var(--color-text);
+  font-family: var(--font-norwester);
+  font-weight: 500;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+/* =====================================================
+   4. EFFECTS AND STYLING
+===================================================== */
+
+/* Optional: if you later add stroke to bg text */
+#bg-text.stroke {
+  -webkit-text-stroke: 2px var(--color-accent);
+  color: transparent;
+}
+
+/* =====================================================
+   ICON STRIP (Shoot / Edit / Color / Sound / Motion)
+===================================================== */
+
+/* Container */
+.tools-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 3rem;
+  padding: 3rem 1rem; */
+  flex-wrap: wrap;
+}
+
+/* Individual item */
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Icon circle */
+.icon-circle {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+/* Icon */
+.icon-circle img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Text */
+.tool-label {
+  font-family: var(--font-teko);
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+/* =========================
+   WORK CARD CONTAINER
+========================= */
+
+.section-title {
+  color: var(--color-text);
+  font-family: var(--font-norwester);
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.work-container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.work-card {
+  position: relative;
+  height: 160px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* =========================
+   IMAGE STYLING
+========================= */
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   OVERLAY (HIDDEN BY DEFAULT)
+========================= */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  z-index: 2;
+}
+
+/* =========================
+   TITLE TEXT
+========================= */
+
+.card-title {
+  position: relative;
+  z-index: 3;
+
+  color: var(--color-text);
+  font-family: var(--font-teko);
+  text-align: center;
+  /* letter-spacing: 1px; */
+  font-size: 0.9rem;
+}
+
+.card-overlay p {
+  font-size: 1.5rem;
+  line-height: normal;
+
+}
+
+.btn {
+  font-family: var(--font-teko);
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+/* =====================================================
+   CONTACT SECTION
+===================================================== */
+
+#contact-container {
+  min-height: 70vh;
+}
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+#top-txt {
+  color: var(--color-text);
+  font-family: var(--font-teko);
+  font-weight: 550;
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  line-height: 1;
+  /* margin-top: 0px; */
+}
+
+
+/* =====================================================
+   CONTACT CARD
+===================================================== */
+
+#contact-card {
+  margin-top: 1rem;
+  padding: 1.6rem 3rem;
+
+  border: 2px solid var(--color-accent);
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* =====================================================
+   MAIL LINK
+===================================================== */
+
+.mail-link {
+  font-family: var(--font-teko);
+  font-size: 1.7rem;
+  /* letter-spacing: 0.05em; */
+  text-transform: uppercase;
+
+  color: var(--color-text);
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+
+/* =====================================================
+   SOCIAL LINKS
+===================================================== */
+
+#asaadh-ig,
+#amiti-ig {
+  font-family: var(--font-teko);
+  font-weight: 500;
+  font-size: 1.7rem;
+  /* letter-spacing: 0.05em; */
+
+  color: var(--color-text);
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+/* =====================================================
+   DIVIDER TEXT (OR)
+===================================================== */
+
+#div-text {
+  font-family: var(--font-teko);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+}
+
+/* =====================================================
+   GENERAL INTERACTIONS
+===================================================== */
+
+/* underline */
+.navbar .menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  width: 0%;
+  height: 2px;
+
+  background-color: var(--color-accent);
+  transition: width 0.5s ease-in;
+}
+
+/* hover */
+.navbar .menu a:hover::after {
+  width: 100%;
+}
+
+.submark:hover {
+  transform: scale(1.07);
+  transition: all 0.4s ease-in-out;
+}
+
+.tool-item:hover .icon-circle {
+  background-color: var(--color-accent);
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.tool-item:hover .tool-label {
+  color: var(--color-accent);
+}
+
+#svg {
+  filter: brightness(0) invert(1);
+}
+
+.hero-image:hover {
+  transform: scale(1.015);
+  transition: all 0.4s ease-in-out;
+}
+
+/* =========================
+   WORK CARD HOVER EFFECTS
+========================= */
+
+/* Show overlay */
+.work-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* Zoom image */
+.work-card:hover .card-img {
+  transform: scale(1.1);
+}
+
+/* =========================
+   CONTACT SECTION HOVER EFFECTS
+========================= */
+
+.mail-link:hover {
+  color: var(--color-accent);
+}
+
+#asaadh-ig:hover,
+#amiti-ig:hover {
+  color: var(--color-accent);
+}
+
+/* =====================================================
+   5. COMPONENT-SPECIFIC OVERRIDES
+===================================================== */
+
+/* DaisyUI menu override (font fix) */
+.navbar .menu a {
+  font-family: var(--font-teko);
+}
+
+/*-------- Home Page Button Styling ----------- */
+
+.cta-button {
+  font-family: var(--font-teko);
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  padding: 0.8rem 2.2rem;
+
+  background-color: #313030;
+  color: var(--color-text);
+
+  border: 2px solid var(--color-accent);
+  text-decoration: none;
+
+  display: inline-block;
+  cursor: pointer;
+
+  border-radius: 7px;
+
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.cta-button:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Active (nice subtle press effect) */
+.cta-button:active {
+  transform: translateY(0);
+  opacity: 0.8;
+}
+
+/* -------------- Hamburger Menu for smaller screens -------------- */
+.navbar .btn-ghost {
+  background: transparent;
+  border: none;
+}
+
+.navbar .btn-ghost:hover {
+  background: transparent;
+  color: var(--color-accent);
+}
+
+.dropdown-content {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-accent);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.dropdown-content a {
+  font-family: var(--font-teko);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dropdown-content {
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.25s ease;
+  position: absolute;
+  right: 0;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.showreel-iframe {
+  width: 90%;
+  aspect-ratio: 16/9;
+}
+
+/* =====================================================
+   6. RESPONSIVE ADJUSTMENTS
+===================================================== */
+
+/* ================= HOME HERO (PROPORTIONAL FIX) ================= */
+@media (max-width: 768px) {
+
+  .relative.flex-1 {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Keep text tighter + more balanced */
+  #fg-text {
+    font-size: clamp(2.6rem, 8vw, 3.6rem) !important;
+    line-height: 1.1;
+    max-width: 85%;
+    /* forces better line breaks */
+  }
+
+  /* Watermark aligned with text presence */
+  #bg-text {
+    font-size: clamp(7rem, 30vw, 11rem) !important;
+    opacity: 0.15 !important;
+    top: 43%;
+  }
+
+  /* Bring button closer + reduce dominance */
+  .cta-button {
+    margin: 0.3rem;
+    font-size: 1.35rem;
+    padding: 0.45rem 1.6rem;
+  }
+}
+
+/* ================= NAVBAR MOBILE TWEAKS ================= */
+
+.navbar {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.submark {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar .btn-ghost {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.dropdown-content {
+  right: 0;
+  width: 200px;
+}
+
+.dropdown-content a {
+  padding: 0.75rem 1rem;
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 480px) {
+
+  #fg-text {
+    font-size: 1.6rem;
+  }
+
+  #bg-text {
+    font-size: 3.5rem;
+    opacity: 0.05;
+  }
+
+  .cta-button {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.6rem;
+  }
+}
+
+/* =====================================================
+   ABOUT PAGE – MOBILE OPTIMIZATION
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* ================= HERO LAYOUT ================= */
+
+  .hero-section {
+    flex-direction: column;
+    padding: 1.5rem 1.2rem;
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  /* ================= TEXT SPACING FIX ================= */
+
+  .about-h1 {
+    padding: 0 0 1rem 0 !important;
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .intro {
+    padding: 0 !important;
+    font-size: clamp(1.5rem, 6vw, 1.4rem) !important;
+    line-height: 1.4;
+  }
+
+  /* ================= IMAGE FIX ================= */
+
+  .hero-media {
+    padding: 0 !important;
+    justify-content: center;
+  }
+
+  .hero-image {
+    max-width: 220px;
+    width: 80%;
+  }
+
+  /* ================= DIVIDER FIX ================= */
+
+  .pl-18 {
+    padding-left: 0 !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .divider {
+    width: 60%;
+  }
+
+  /* ================= ICON STRIP ================= */
+
+  .tools-grid {
+    gap: 2rem !important;
+    padding: 2rem 0.3rem;
+  }
+
+  .workflow {
+    padding: 1rem 0 0.5rem 0;
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 1024px) {
+
+  /* for tablets */
+  .hero-image {
+    max-width: 350px;
+  }
+}
+
+/* -------- Icon Srtip Responsiveness Styling - Tablet ----------- */
+
+@media (max-width: 1024px) {
+  .tools-grid {
+    gap: 2.5rem;
+  }
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon-circle img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* -------- XS Devices Support ----------- */
+
+@media (max-width: 480px) {
+
+  .about-h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro {
+    font-size: 1.05rem;
+  }
+
+  .hero-image {
+    max-width: 240px;
+  }
+
+  .divider {
+    width: 70%;
+  }
+}
+
+/* =====================================================
+   WORK PAGE – MOBILE OPTIMIZATION
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* ================= MAIN CONTAINER ================= */
+
+  .work-container {
+    padding: 1.5rem 1.2rem !important;
+  }
+
+  /* ================= GRID STACK FIX ================= */
+
+  main .grid {
+    gap: 2rem;
+  }
+
+  /* ================= HEADINGS ================= */
+
+  .section-title {
+    font-size: 1.6rem;
+    text-align: left !important;
+    margin-bottom: 1rem;
+    text-align: center !important;
+    width: 100%;
+  }
+
+  /* ================= SHOWREEL ================= */
+
+  .showreel-wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .showreel-iframe {
+    width: 90%;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+  }
+
+  /* ================= WORK GRID ================= */
+
+  .grid.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  /* ================= CARD SIZE ================= */
+
+  .work-card {
+    height: 120px;
+    border-radius: 14px;
+  }
+
+  /* ================= MOBILE TAP FIX (NO HOVER) ================= */
+
+  .card-overlay {
+    opacity: 1; /* always visible on mobile */
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .card-title {
+    font-size: 0.65rem;
+  }
+
+  .card-overlay .btn {
+    font-size: 1.2rem !important;
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* ------XS Devices Support */
+
+@media (max-width: 480px) {
+
+  .grid.grid-cols-2 {
+    gap: 0.6rem;
+  }
+
+  .work-card {
+    height: 110px;
+  }
+
+  .card-title {
+    font-size: 0.7rem;
+  }
+
+  .card-overlay .btn {
+    font-size: 0.65rem;
+  }
+}
+
+
+/* =====================================================
+  CONTACT ALIGNMENT
+===================================================== */
+
+/* =====================================================
+   CONTACT PAGE – MOBILE OPTIMIZATION
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* ================= CONTAINER ================= */
+
+  #contact-container {
+    padding-top: 5rem !important; /* reduce excessive top gap */
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  /* ================= HEADING ================= */
+
+  #top-txt {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    text-align: center;
+    margin-top: 9rem;
+  }
+
+  /* ================= CARD ================= */
+
+  #contact-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 1.4rem 1.5rem;
+  }
+
+  /* ================= MAIL LINK ================= */
+
+  .mail-link {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  /* ================= DIVIDER ================= */
+
+  .divider {
+    width: 100%;
+
+  }
+
+  /* ================= SOCIAL LINKS ================= */
+
+  #asaadh-ig,
+  #amiti-ig {
+    font-size: 1.4rem;
+  }
+
+  #div-text {
+    font-size: 1.2rem;
+  }
+
+}
+
+/* ----- XS Devices Support */
+
+@media (max-width: 480px) {
+
+  #top-txt {
+    font-size: 1.8rem;
+  }
+
+  .mail-link {
+    font-size: 1.3rem;
+  }
+
+  #asaadh-ig,
+  #amiti-ig {
+    font-size: 1.3rem;
+  }
+
+  #contact-card {
+    max-width: 280px;
+  }
+}
+
+/* =====================================================
+  7. FOOTER (Minimal Layout)
+===================================================== */
+.footer-simple {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+}
+
+/* Left: Devnagri name */
+.footer-left {
+  font-family: var(--font-teko);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Right: copyright */
+.footer-right {
+  font-size: 1.5rem;
+  opacity: 0.6;
+  font-family: var(--font-teko);
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* =====================================================
+   FOOTER RESPONSIVENESS
+===================================================== */
+
+@media (max-width: 768px) {
+  .footer-simple {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

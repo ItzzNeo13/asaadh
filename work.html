@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asaadh - Work</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Icon -->
+    <link rel="icon" href="./assets/favicon.ico">
+    <!-- Font CDNs -->
+    <!-- Non-Google Font CDNs -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=teko:300,400,500,600,700" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
+    <!-- Styling Libraries -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        teko: ['Teko', 'sans-serif'],
+                        norwester: ['Norwester', 'sans-serif']
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss-animated@2.0.0/src/index.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <div class="navbar bg-[#181818] text-white px-4">
+
+        <!-- LEFT: Logo + Hamburger -->
+        <div class="navbar-start w-full flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="./index.html" class="flex items-center">
+                <img src="./assets/submark-550.png" class="h-14 sm:h-14 lg:h-18 w-auto object-contain submark px-5 py-2 shrink-0">
+            </a>
+
+            <!-- Hamburger (mobile only) -->
+            <div class="dropdown lg:hidden">
+                <label tabindex="0" class="btn btn-ghost p-0 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-10 w-10"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </label>
+
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-[#181818] rounded-box w-52">
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./work.html">Work</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RIGHT: Desktop Menu -->
+        <div class="navbar-end hidden lg:flex">
+            <ul class="menu menu-horizontal px-6 font-teko text-lg">
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./work.html">Work</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- ================= MAIN SECTION ================= -->
+    <main class="work-container px-10">
+
+        <!-- FORCE 2-COLUMN LAYOUT ON LARGE SCREENS -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            <!-- ===== LEFT: SHOWREEL ===== -->
+            <div class="flex flex-col h-full">
+
+                <h2 class="section-title mb-6">EDITOR SHOWREEL</h2>
+
+                <div class="showreel-wrapper rounded-2xl overflow-hidden flex-grow">
+                    <iframe class="showreel-iframe" src="https://www.youtube.com/embed/s0NzllwBsyk" allowfullscreen loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+
+            <!-- ===== RIGHT: PREVIOUS WORKS ===== -->
+            <div class="flex flex-col h-full">
+
+                <h2 class="section-title mb-6 text-right">SOME PREVIOUS WORKS</h2>
+
+                <!-- ===== PREVIOUS WORKS GRID ===== -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+
+                    <!-- ================= CARD 1 ================= -->
+                    <div class="work-card group">
+                        <img src="./assets/work-covers/event.jpg" alt="Event Highlights" class="card-img">
+                        <div class="card-overlay">
+                            <p class="card-title">EVENT<br>HIGHLIGHTS</p>
+                            <a href="https://www.instagram.com/reel/DRH05BGE6dZ/?igsh=MTA5bDcwenYwNHVpeA==" target="_blank" class="btn btn-sm btn-outline btn-accent text-white mt-2">
+                                View Video
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ================= CARD 2 ================= -->
+                    <div class="work-card group">
+                        <img src="./assets/work-covers/cinematic.jpg" alt="Cinematic Videography" class="card-img">
+                        <div class="card-overlay">
+                            <p class="card-title">CINEMATIC<br>VIDEOGRAPHY</p>
+                            <a href="https://www.instagram.com/reel/DUGI4xrj7Vr/?igsh=OXFjajVmaGF4b2ly" target="_blank" class="btn btn-sm btn-outline btn-accent text-white mt-2">
+                                View Video
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ================= CARD 3 ================= -->
+                    <div class="work-card group">
+                        <img src="./assets/work-covers/taalish.jpg" alt="Luxury Property" class="card-img">
+                        <div class="card-overlay">
+                            <p class="card-title">LUXURY<br>PROPERTY</p>
+                            <a href="https://www.instagram.com/reel/DXmXO2jESJQ/?igsh=ZmgwaWhidDU1bDdl" target="_blank" class="btn btn-sm btn-outline btn-accent text-white mt-2">
+                                View Video
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ================= CARD 4 ================= -->
+                    <div class="work-card group">
+                        <img src="./assets/work-covers/workshop.jpg" alt="Workshop Documentation" class="card-img">
+                        <div class="card-overlay">
+                            <p class="card-title">WORKSHOP<br>DOCUMENTATION</p>
+                            <a href="https://www.instagram.com/reel/DSm71BPCH9r/?igsh=MXAwd2ZwZngzMWl6cA==" target="_blank" class="btn btn-sm btn-outline btn-accent text-white mt-2">
+                                View Video
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ================= CARD 5 ================= -->
+                    <div class="work-card group">
+                        <img src="./assets/work-covers/artist.png" alt="Artist Covers" class="card-img">
+                        <div class="card-overlay">
+                            <p class="card-title">ARTIST<br>COVERS</p>
+                            <a href="https://www.instagram.com/reel/DRXG_HSCOGh/?igsh=MWhxc3lkcDVsczhrbQ==" target="_blank" class="btn btn-sm btn-outline btn-accent text-white mt-2">
+                                View Video
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ================= CARD 6 ================= -->
+                    <div class="work-card group">
+                        <img src="./assets/work-covers/campaign.png" alt="Election Campaign" class="card-img">
+                        <div class="card-overlay">
+                            <p class="card-title">ELECTION<br>CAMPAIGN</p>
+                            <a href="https://www.instagram.com/reel/DTu0QFFiA__/?igsh=MWtrYnJpYndhcTZpaA==" target="_blank" class="btn btn-sm btn-outline btn-accent text-white mt-2">
+                                View Video
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+       <footer class="footer-simple">
+        <p class="footer-left">असाध</p>
+        <p class="footer-right">© <span id="year"></span>
+            <script>
+                document.getElementById("year").textContent = new Date().getFullYear();
+            </script> - Prasad Ghaisas
+        </p>
+
+    </footer>
+</body>
+
+</html>

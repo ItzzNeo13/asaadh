@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asaadh - Contact</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Icon -->
+    <link rel="icon" href="./assets/favicon.ico">
+    <!-- Font CDNs -->
+    <!-- Non-Google Font CDNs -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=teko:300,400,500,600,700" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
+    <!-- Styling Libraries -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        teko: ['Teko', 'sans-serif'],
+                        norwester: ['Norwester', 'sans-serif']
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss-animated@2.0.0/src/index.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- ================= NAVBAR ================= -->
+    <div class="navbar bg-[#181818] text-white px-4">
+
+        <!-- LEFT: Logo + Hamburger -->
+        <div class="navbar-start w-full flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="./index.html" class="flex items-center">
+                <img src="./assets/submark-550.png" class="h-14 sm:h-14 lg:h-18 w-auto object-contain submark px-5 py-2 shrink-0">
+            </a>
+
+            <!-- Hamburger (mobile only) -->
+            <div class="dropdown lg:hidden">
+                <label tabindex="0" class="btn btn-ghost p-0 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </label>
+
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-[#181818] rounded-box w-52">
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./work.html">Work</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RIGHT: Desktop Menu -->
+        <div class="navbar-end hidden lg:flex">
+            <ul class="menu menu-horizontal px-6 font-teko text-lg">
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./work.html">Work</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div id="contact-container" class="flex flex-col items-center justify-start pt-24 md:pt-32 text-center">
+
+        <!-- Heading -->
+        <h1 id="top-txt">
+            Reach Out<span class="text-[#FFC300]">.</span>
+        </h1>
+
+        <!-- Card -->
+        <div id="contact-card" class="mt-2 flex flex-col items-center">
+
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=asaadhmedia%2Bportfolio@gmail.com"
+                target="_blank" rel="noopener noreferrer" class="mail-link">
+                Send a mail (Gmail)
+            </a>
+
+            <div class="divider divider-warning w-64 my-2"></div>
+
+            <!-- Socials -->
+            <div class="flex flex-col items-center gap-1">
+                <a id="asaadh-ig" href="https://instagram.com/asaadhmedia" target="_blank"> @asaadhmedia </a>
+
+                <span id="div-text">OR</span>
+
+                <a id="amiti-ig" href="https://instagram.com/amiticreations" target="_blank"> @amiticreations </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+        <footer class="footer-simple">
+        <p class="footer-left">असाध</p>
+        <p class="footer-right">© <span id="year"></span>
+            <script>
+                document.getElementById("year").textContent = new Date().getFullYear();
+            </script> - Prasad Ghaisas
+        </p>
+
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asaadh - About</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Icon -->
+    <link rel="icon" href="./assets/favicon.ico">
+    <!-- Font CDNs -->
+    <!-- Non-Google Font CDNs -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=teko:300,400,500,600,700" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
+    <!-- Styling Libraries -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        teko: ['Teko', 'sans-serif'],
+                        norwester: ['Norwester', 'sans-serif']
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss-animated@2.0.0/src/index.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+   <!-- ================= NAVBAR ================= -->
+    <div class="navbar bg-[#181818] text-white px-4">
+
+        <!-- LEFT: Logo + Hamburger -->
+        <div class="navbar-start w-full flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="./index.html" class="flex items-center">
+                <img src="./assets/submark-550.png" class="h-14 sm:h-14 lg:h-18 w-auto object-contain submark px-5 py-2 shrink-0">
+            </a>
+
+            <!-- Hamburger (mobile only) -->
+            <div class="dropdown lg:hidden">
+                <label tabindex="0" class="btn btn-ghost p-0 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-10 w-10"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </label>
+
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-[#181818] rounded-box w-52">
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./work.html">Work</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RIGHT: Desktop Menu -->
+        <div class="navbar-end hidden lg:flex">
+            <ul class="menu menu-horizontal px-6 font-teko text-lg">
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./work.html">Work</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Text  -->
+    <div class="hero-section">
+
+        <!-- Left content -->
+        <div class="hero-text">
+            <h1 class="about-h1 px-10 py-8 text-left">
+                I don’t just cut footage, <br>
+                I shape how it’s felt.
+            </h1>
+            <!-- Intro -->
+            <h3 class="intro px-10 text-left">
+                I am Prasad Ghaisas, a video editor based in Mumbai.<br>
+                My workflow focuses on <span class="text-[#FFC300]">storytelling</span> —<br>
+                where pacing, silence, and sound carry the emotion.<br>
+                My style is driven by <span class="text-[#FFC300]">restraint</span> as much as expression,<br>
+                choosing what to leave out as carefully as what to include.<br>
+                I’ve worked across narrative pieces, branded content, and digital formats —
+                <span class="text-[#FFC300]">adapting</span> style without losing clarity.
+            </h3>
+        </div>
+
+        <!-- Right image -->
+        <div class="hero-media px-25">
+            <img src="./assets/hero-img.jpg" alt="Main visual" class="hero-image">
+        </div>
+
+    </div>
+    <!-- DIVIDER LINE -->
+    <div class="pl-18">
+        <div class="divider divider-warning w-80"></div>
+    </div>
+
+    <!-- =========== ICON STRIP ============== -->
+    <h3 class="workflow px-10 py-2 text-center flex flex-col">What I Do?</h3>
+    <div class="tools-grid flex justify-center items-center gap-12 py-5">
+        <!-- ICONS -->
+        <div class="tool-item">
+            <div class="icon-circle">
+                <img src="./assets/shoot.png" alt="Shoot">
+            </div>
+            <p class="tool-label">Shoot</p>
+        </div>
+
+        <div class="tool-item">
+            <div class="icon-circle">
+                <img id="svg" src="./assets/edit.svg" alt="Edit">
+            </div>
+            <p class="tool-label">Edit</p>
+        </div>
+
+        <div class="tool-item">
+            <div class="icon-circle">
+                <img id="svg" src="./assets/color.svg" alt="Color">
+            </div>
+            <p class="tool-label">Color</p>
+        </div>
+
+        <div class="tool-item">
+            <div class="icon-circle">
+                <img src="./assets/sound.png" alt="Sound">
+            </div>
+            <p class="tool-label">Sound</p>
+        </div>
+
+        <div class="tool-item">
+            <div class="icon-circle">
+                <img src="./assets/motion.png" alt="Motion">
+            </div>
+            <p class="tool-label">Motion</p>
+        </div>
+
+    </div>
+    <!-- Footer -->
+        <footer class="footer-simple">
+        <p class="footer-left">असाध</p>
+        <p class="footer-right">© <span id="year"></span>
+            <script>
+                document.getElementById("year").textContent = new Date().getFullYear();
+            </script> - Prasad Ghaisas
+        </p>
+
+    </footer>
+</body>
+
+</html>
